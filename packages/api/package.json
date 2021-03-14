@@ -1,11 +1,12 @@
 {
   "name": "@gamepower/api",
-  "version": "1.0.0",
+  "version": "1.0.4",
   "type": "module",
+  "types": "dist/index.d.ts",
   "description": "Api for the GamePower blockchain provider",
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "tsc"
   },
   "repository": {
     "type": "git",
