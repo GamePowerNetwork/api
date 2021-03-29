@@ -5,6 +5,7 @@ enum MessageTypes {
     ApiResult = "ApiResult",
     AppRequest = "AppRequest",
     AppResult = "AppResult",
+    CollectionResult = "CollectionResult",
     TitleDataResult = "TitleDataResult",
 }
 

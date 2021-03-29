@@ -5,8 +5,21 @@ import IMessage from "./models/interfaces/message";
 import {request} from "./request";
 
 let connection;
+let callbackMap = {
+    appRequest: () => void 0,
+    userData: () => void 0,
+    grantCollectable: () => void 0,
+}
 
 let api = {
+
+    on: (event:string, callback:Function) => {
+        callbackMap[event] = callback;
+    },
+
+    dispatch: (event:string, data:any) => {
+        callbackMap[event](data);
+    },
 
     connect: async (uri) => {
         const wsProvider = new WsProvider(uri);
@@ -67,7 +80,8 @@ let api = {
 
             switch(message.Type){
                 case MessageTypes.ApiRequest:
-                    request.getEndpointByType(message);
+                case MessageTypes.AppRequest:
+                    request.getEndpoint(message);
                     break;
 
                 default:
@@ -84,5 +98,7 @@ let api = {
 }
 
 export {
-    api
+    api,
+    MessageTypes,
+    IMessage
 }

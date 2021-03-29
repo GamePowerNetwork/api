@@ -11,5 +11,8 @@
   "bugs": {
     "url": "https://github.com/GamePowerNetwork/api/issues"
   },
-  "homepage": "https://github.com/GamePowerNetwork/api#readme"
+  "homepage": "https://github.com/GamePowerNetwork/api#readme",
+  "dependencies": {
+    "jsonwebtoken": "^8.5.1"
+  }
 }
